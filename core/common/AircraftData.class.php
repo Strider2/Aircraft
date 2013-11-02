@@ -28,13 +28,8 @@ class AircraftData extends CodonData
 
         return DB::get_row($query);
     }
-    /*public function get_aircrafts($airline)
-    {
-        $query = "SELECT * FROM phpvms_fleet WHERE airline='$airline'";
 
-        return DB::get_row($query);
-    }*/
-	    public function get_aircrafts($id)
+	public function get_aircrafts($id)
     {
         $query = "SELECT * FROM phpvms_fleet WHERE id='$id'";
 
