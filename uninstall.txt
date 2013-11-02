@@ -1,0 +1,12 @@
+`phpvms_fleet`*sql
+../admin/modules/Aircraft_admin/aircraft_admin.php
+../admin/templates/aircraft/aircraft_edit_form.tpl
+../admin/templates/aircraft/aircraft_header.tpl
+../admin/templates/aircraft/aircraft_index.tpl
+../admin/templates/aircraft/aircraft_new_form.tpl
+../admin/templates/aircraft/sidebar_aircraft.tpl
+../admin/templates/aircraft/aircrafts_aircraft.tpl
+../core/common/AircraftData.class.php
+../core/modules/Aircraft/Aircraft.php
+../core/templates/aircraft/aircraft.tpl
+../core/templates/aircraft/aircraftview.tpl
