@@ -19,13 +19,22 @@ $this->show('aircraft/aircraft_header.tpl');
                            ?>/>
                            </td>
             </tr>
-            <tr>
+           <tr>
                 <td>Airline</td>
-                <td><input type="text" maxlength="3" name="airline"
-                           <?php
-                                if(isset($aircraft))
-                                {echo 'value="'.$aircraft['airline'].'"';}
-                           ?>/></td>
+                <td>
+                <select name="airline" id="airline">
+                <!-- Add your own airline codes here, the code below will get it from the codeshare module -->
+                <option value="MH">MH</option>
+
+		<?php
+		foreach($airlines as $airline)
+		{
+			echo '<option value="'.$airline->airline.'">'.$airline->airline.'</option>';
+		}
+        
+		?>
+		</select>
+                </td>
             </tr>
                         <tr>
                 <td>Aircraft ID</td>

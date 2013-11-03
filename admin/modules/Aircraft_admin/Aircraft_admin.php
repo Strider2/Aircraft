@@ -50,6 +50,8 @@ class Aircraft_admin extends CodonModule
     }
     public function new_aircraft()
     {
+		$airlines = AircraftData::get_airline();
+		$this->set('airlines', $airlines);
         $this->show('aircraft/aircraft_new_form.tpl');
     }
     protected function save_new_fleet()
@@ -63,15 +65,6 @@ class Aircraft_admin extends CodonModule
 
   
 
-   /*     foreach($ac as $test)
-        {
-            if(empty($test))
-            {
-                $this->set('aircrafts', $ac);
-                $this->show('aircraft/aircraft_new_form.tpl');
-                return;
-            }
-        }*/
 
  
 

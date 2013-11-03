@@ -9,7 +9,7 @@ This module is only used for phpVMS (www.phpvms.net) - (A Virtual Airline Admin 
 @Under CC 3.0
 @http://creativecommons.org/licenses/by-nc-sa/3.0/
 
-// Version 1.0 (November 1.13) - Module Created
+// Version 1.1 (November 3.13) - Module Created
 **/
 class AircraftData extends CodonData
 {
@@ -34,6 +34,10 @@ class AircraftData extends CodonData
         $query = "SELECT * FROM phpvms_fleet WHERE id='$id'";
 
         return DB::get_row($query);
+    }
+	   public function get_airline()
+    {
+        return DB::get_results("SELECT * FROM ".TABLE_PREFIX."codeshares GROUP BY airline");
     }
    public function get_past_fleet()
     {

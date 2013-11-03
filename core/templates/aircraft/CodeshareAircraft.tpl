@@ -9,7 +9,7 @@ $(function() {
 
 <h3>Aircraft break Down</h3>
 <p>Place your own text here.</p>
-<p><a href="<?php echo SITE_URL?>/index.php/Aircraft/CodeshareAircraft">Codeshare Aircraft</a></p>
+<p><a href="<?php echo SITE_URL?>/index.php/Aircraft">Aircraft</a></p>
 <?php
 if(!$aircrafts)
     {
