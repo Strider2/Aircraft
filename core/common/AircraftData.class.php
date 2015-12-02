@@ -13,12 +13,12 @@ This module is only used for phpVMS (www.phpvms.net) - (A Virtual Airline Admin 
 **/
 class AircraftData extends CodonData
 {
-    public function get_aircraft()
+    public static function get_aircraft()
     {
         return DB::get_results("SELECT * FROM ".TABLE_PREFIX."fleet");
 		
     }
- 	public function getAircraft($aircraftid)
+ 	public static function getAircraft($aircraftid)
     {
 		
         $query = "SELECT a.*, f.image
@@ -29,31 +29,31 @@ class AircraftData extends CodonData
         return DB::get_row($query);
     }
 
-	public function get_aircrafts($id)
+	public static function get_aircrafts($id)
     {
         $query = "SELECT * FROM phpvms_fleet WHERE id='$id'";
 
         return DB::get_row($query);
     }
-	   public function get_airline()
+	   public static function get_airline()
     {
         return DB::get_results("SELECT * FROM ".TABLE_PREFIX."codeshares GROUP BY airline");
     }
-   public function get_past_fleet()
+   public static function get_past_fleet()
     {
         $query = "SELECT * FROM phpvms_fleet
                 ORDER BY id DESC";
 
         return DB::get_results($query);
     }
-    public function save_new_fleet($aircraft, $airline, $aircraftid, $image)
+    public static function save_new_fleet($aircraft, $airline, $aircraftid, $image)
     {
         $query = "INSERT INTO phpvms_fleet (aircraft, airline, aircraftid, image)
                 VALUES ('$aircraft', '$airline', '$aircraftid', '$image')";
 
         DB::query($query);
     }
-     public function save_edit_fleet($aircraft, $airline, $aircraftid, $image, $id)
+     public static function save_edit_fleet($aircraft, $airline, $aircraftid, $image, $id)
     {
         $query = "UPDATE phpvms_fleet SET
          aircraft='$aircraft',
@@ -65,7 +65,7 @@ class AircraftData extends CodonData
         DB::query($query);
     }
     
-    public function delete_fleet($id)
+    public static function delete_fleet($id)
     {
         $query = "DELETE FROM phpvms_fleet
                     WHERE id='$id'";
